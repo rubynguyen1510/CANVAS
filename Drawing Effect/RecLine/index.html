@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Drawing Effect</title>
+	<style type="text/css">
+		body
+		{
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="myPrettyCanvas"></canvas>
+	<script type="text/javascript">
+      var canvasId = 'myPrettyCanvas',
+          canvas = document.getElementById(canvasId),
+          c = canvas.getContext('2d'),
+          grd;
+
+      	c.canvas.width  = window.innerWidth;
+  		c.canvas.height = window.innerHeight;
+  		
+      // Create gradient
+      grd = c.createLinearGradient(0.000, innerHeight, innerWidth, innerHeight);
+      // Add colors
+      grd.addColorStop(0.000, 'rgba(255, 86, 86, 1.000)');
+      grd.addColorStop(0.983, 'rgba(255, 255, 86, 1.000)');
+      // Fill with gradient
+      c.fillStyle = grd;
+      c.fillRect(0, 0, innerWidth, innerHeight);
+    </script>
+    <script src="canvas.js"></script>
+</body> 
+</html>
